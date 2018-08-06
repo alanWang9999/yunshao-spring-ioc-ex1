@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byType">
+
+    <bean id="userService" class="com.yunshao.service.UserService" ></bean>
+    <bean id="productService" class="com.yunshao.service.ProductService" ></bean>
+
+    <bean id="userDao" class="com.yunshao.dao.UserDao" ></bean>
+    <bean id="productDao" class="com.yunshao.dao.ProductDao" ></bean>
+
+    <bean id="dbHelperBean" class="com.yunshao.dao.DBHelperBean">
+        <property name="url" >
+            <value><![CDATA[jdbc:mysql://localhost:3306/easybuy?characterEncoding=utf-8&useSSL=false]]></value>
+        </property>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
+
+
+</beans>
